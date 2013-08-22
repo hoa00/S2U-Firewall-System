@@ -1,0 +1,4 @@
+########## S.2.U Firewall System 2.7 ##########
+Options All -Indexes +FollowSymlinks
+DirectoryIndex s2u_firewall_admin.php
+########## S.2.U Firewall System 2.7 ##########

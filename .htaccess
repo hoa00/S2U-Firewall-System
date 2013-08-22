@@ -1,0 +1,94 @@
+########## S.2.U Firewall System 2.7 ##########
+RewriteBase /
+Options All -Indexes
+DirectoryIndex index.html index.php
+LimitRequestBody 10240000
+AddDefaultCharset UTF-8
+
+<IfModule mod_gzip.c>
+	mod_gzip_on Yes
+	mod_gzip_dechunk Yes
+	mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
+	mod_gzip_item_include handler ^cgi-script$
+	mod_gzip_item_include mime ^text\.*
+	mod_gzip_item_include mime ^application/x-javascript.*
+	mod_gzip_item_exclude mime ^image\.*
+	mod_gzip_item_exclude rspheader	^Content-Encoding:.*gzip.*
+</IfModule>
+<ifModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/xml text/css text/plain
+  AddOutputFilterByType DEFLATE image/svg+xml application/xhtml+xml application/xml
+  AddOutputFilterByType DEFLATE application/rdf+xml application/rss+xml application/atom+xml
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript application/json
+  AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-otf
+  AddOutputFilterByType DEFLATE font/truetype font/opentype
+</ifModule>
+<ifModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 5 seconds"
+  ExpiresByType image/x-icon "access plus 2592000 seconds"
+  ExpiresByType image/jpeg "access plus 2592000 seconds"
+  ExpiresByType image/png "access plus 2592000 seconds"
+  ExpiresByType image/gif "access plus 2592000 seconds"
+  ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
+  ExpiresByType text/css "access plus 604800 seconds"
+  ExpiresByType text/javascript "access plus 216000 seconds"
+  ExpiresByType application/javascript "access plus 216000 seconds"
+  ExpiresByType application/x-javascript "access plus 216000 seconds"
+  ExpiresByType text/html "access plus 600 seconds"
+  ExpiresByType application/xhtml+xml "access plus 600 seconds"
+</ifModule>
+<ifModule mod_headers.c>
+  <filesMatch "\.(ico|jpe?g|png|gif|swf)$">
+    Header set Cache-Control "public"
+  </filesMatch>
+  <filesMatch "\.(css)$">
+    Header set Cache-Control "public"
+  </filesMatch>
+  <filesMatch "\.(js)$">
+    Header set Cache-Control "private"
+  </filesMatch>
+  <filesMatch "\.(x?html?|php)$">
+    Header set Cache-Control "private, must-revalidate"
+  </filesMatch>
+</ifModule>
+
+
+<FilesMatch "(index.php|index.html|index.htm|global.php|common.php|globals.php|home.php|400.php|401.php|403.php|404.php|500.php)$">
+	php_value auto_prepend_file "s2u_firewall_system.php"
+	php_value auto_append_file "s2u_firewall_antiiframe.php"
+</FilesMatch>
+
+<ifmodule mod_php4.c>
+	php_value zlib.output_compression 16386
+</ifmodule>
+
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteCond %{HTTP_HOST} ^[0-9.]$ [NC]
+	RewriteRule .* http://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+	
+	RewriteCond %{TIME_HOUR} ^$#
+	RewriteRule ^.*.(php|html)$ closed.php [L]
+</IfModule>
+
+<Files .htaccess>
+	order allow,deny
+	deny from all
+</Files>
+
+<FilesMatch "(s2u_firewall_admin.php|s2u_firewall_func.php|s2u_firewall_tested.php|s2u_firewall_datas.php|s2u_firewall_config.php|.ico|.js|.css|.shtml|.png|.jpg|.gif|.xml)$">
+  order allow,deny
+  allow from all
+</FilesMatch>
+
+SetEnvIf ^Cookie$ user=bad BAD_USER
+deny from env=BAD_USER
+
+ErrorDocument 401 /S2U_Firewall/s2u_firewall_until/401.php
+ErrorDocument 400 /S2U_Firewall/s2u_firewall_until/400.php
+ErrorDocument 403 /S2U_Firewall/s2u_firewall_until/403.php
+ErrorDocument 404 /S2U_Firewall/s2u_firewall_until/404.php
+ErrorDocument 500 /S2U_Firewall/s2u_firewall_until/500.php
+
+########## S.2.U Firewall System 2.7 ##########
