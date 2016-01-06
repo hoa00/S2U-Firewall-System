@@ -8,7 +8,7 @@ S2U-Firewall-System
  
  Author: Mr.Won (won.baria@gmail.com)
  
- Website: http://code.s2u.vn/S2U-Firewall-System
+ Website: http://code.hòa.vn/S2U-Firewall-System/
 
 
 ===================
@@ -60,6 +60,6 @@ Hướng dẫn cài đặt:
 
 ===================
 
-Support or Contact: 
+Liên hệ hoặc hỗ trợ: 
 https://github.com/s2u.vn/S2U-Firewall-System/wiki
 Email: won.baria@gmail.com
