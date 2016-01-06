@@ -23,8 +23,10 @@
 
       <div id="banner">
         <span id="logo"></span>
-
+        <a href="http://s2u.vn" class="button fork"><strong>s2u.vn</strong></a>
         <a href="https://github.com/thehoa/S2U-Firewall-System" class="button fork"><strong>View On GitHub</strong></a>
+        <a href="https://github.com/thehoa/S2U-Firewall-System/wiki" class="button fork"><strong>Wiki</strong></a>
+        <a href="https://github.com/thehoa/S2U-Firewall-System/issues" class="button fork"><strong>Góp ý / Báo lỗi</strong></a>
         <div class="downloads">
           <span>Downloads:</span>
           <ul>
@@ -40,7 +42,7 @@
       </nav>
       <section>
         <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<a name="gioi-thieu" class="anchor" href="#gioi-thieu"><span class="octicon octicon-link"></span></a>GIỚI THIỆU: S2U Firewall System là gì?</h3>
 
 <p>Hệ thống chống ddos hiệu quả dành cho website của bạn, khả năng chống botnet, flood, spam,... hạn chế tối đa từ các lượt tấn công! Nó chạy ngầm và phân tích tình hình, tùy biến cấu hình dễ dàng, phù hợp với mọi website.</p>
 
@@ -75,30 +77,33 @@ $ git checkout gh-pages
 <li>Nhiều cấu hình tự thiết lập dễ dàng.</li>
 <li>Và một số tính năng khác bạn có thể tham khảo ở trong trang Quản Lý Hệ Thống.</li>
 </ul><h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a name="huong-dan" class="anchor" href="#huong-dan"><span class="octicon octicon-link"></span></a>Hướng dẫn cài đặt:</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<ol>
+<li>Download file nén .zip ở dưới bài viết.</li>
+<li>Xóa firewall cũ (nếu có). cần chmod thư mục 701 và file 604 để có thể xóa hoàn toàn.</li>
+<li>Giải nén và up lên thư mục chính của website cần bảo vệ. (Nếu file .htaccess trên host đã có thì copy nội dung file .htaccess vừa giải ghi thêm vào cuối nội dung file đã có trên host)</li>
+<li>Truy cập http://domain/S2U_Firewall/ và đăng nhập bằng mật khẩu mặc định: s2u</li>
+<li>Chạy "tối ưu" ở mục cấu hình -&gt; chạy "kiểm tra" ở mục kiểm tra (nếu "Hỗ trợ AUTO_PREPEND_FILE" báo không tương thích thì bạn làm bước 7 ) để có cấu hình tốt nhất.</li>
+<li>Kiểm tra hoạt động của firewall bằng cách nhấn F5 liên tục ở website bạn, ip và logs sẽ được ghi trong trang quản lý ("Lấy thông tin" ở mục tình trạng). Nếu đã chắc chắn, bạn có thể thử thêm công cụ S.2.U Ddos Flash Client trong mục công cụ.</li>
+<li>Nếu không thấy ip hay logs thì mở file index hoặc file global của website và include file s2u_firewall_system.php vào. </li>
+</ol>
 
 <h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Tác giả và quyền sử dụng</h3>
 
-<p>Xem các hướng dẫn chi tiết khác ở trang Wiki.</p>
+<p>Đây là sản phẩm Mr.Won (won.baria@gmail.com) và nhóm S2U.VN, bạn được toàn quyền sử dụng và sao chép cho mục đích phi thương mại. Nghiêm cấm bán lại mã nguồn dưới mọi hình thức và sử dụng mã nguồn vào mục đích phạm pháp.</p>
 
-<p>Để S.2.U Firewall System ngày càng phát triển hơn, bạn vui lòng thông báo lỗi và những khuyết điểm cho Won tại Issues nhé ;)</p>
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Hỗ trợ và Liên hệ</h3>
+
+<p>Xem các hướng dẫn chi tiết khác ở <a href="https://github.com/thehoa/S2U-Firewall-System/wiki">trang Wiki</a>.</p>
+
+<p>Để S.2.U Firewall System ngày càng phát triển hơn, bạn vui lòng thông báo lỗi và những lỗi hoặc góp ý cho Won <a href="https://github.com/thehoa/S2U-Firewall-System/issues">tại Issues</a> nhé ;)</p>
 
 <p><a href="http://code.s2u.vn/S2U-Firewall-System">http://code.s2u.vn/S2U-Firewall-System</a></p>
 
-<p>Bạn có thể hỏi bất cứ câu hỏi nào về hệ thống này ở phần Liên Hệ hoặc gửi mail đến <a href="mailto:won.baria@gmail.com">won.baria@gmail.com</a> hoặc vào diễn đàn. Cám ơn!</p>
+<p>Bạn có thể hỏi bất cứ câu hỏi nào về hệ thống này ở phần Liên Hệ hoặc gửi email đến <a href="mailto:won.baria@gmail.com">won.baria@gmail.com</a> hoặc vào diễn đàn. Cám ơn!</p>
       </section>
       <footer>
         <p>Project maintained by <a href="https://github.com/thehoa">thehoa</a></p>
