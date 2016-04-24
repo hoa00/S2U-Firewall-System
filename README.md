@@ -3,17 +3,17 @@ S2U-Firewall-System
 
 
  Hệ thống tường lửa cao cấp
- 
- Version 2.7 - 30/06/2013
- 
+
+ Version 3.0.6 - 20/04/2016
+
  Author: Mr.Won (won.baria@gmail.com)
- 
+
  Website: http://code.hòa.vn/S2U-Firewall-System/
 
 
 ===================
 
-Hệ thống chống ddos hiệu quả dành cho website của bạn, khả năng chống botnet, flood, spam,... 
+Hệ thống chống ddos hiệu quả dành cho website của bạn, khả năng chống botnet, flood, spam,...
 hạn chế tối đa từ các lượt tấn công! Nó chạy ngầm và phân tích tình hình, tùy biến cấu hình dễ dàng,
 phù hợp với nhiều website sử dụng ngôn ngữ PHP.
 
@@ -47,19 +47,24 @@ Các tính năng:
  - Nhiều cấu hình tự thiết lập dễ dàng.
  - Và một số tính năng khác bạn có thể tham khảo ở trong trang Quản Lý Hệ Thống.
 
-===================
+ ===================
 
-Hướng dẫn cài đặt:
+ Hướng dẫn nâng cấp:
+ Xóa hết thư mục cũ và up thư mục mới lên.
+
+ ===================
+
+ Hướng dẫn cài đặt:
  1. Download file nén .zip ở dưới bài viết.
  2. Xóa firewall cũ (nếu có). cần chmod thư mục 701 và file 604 để có thể xóa hoàn toàn.
  3. Giải nén và up lên thư mục chính của website cần bảo vệ. (Nếu file .htaccess trên host đã có thì copy nội dung file .htaccess vừa giải ghi thêm vào cuối nội dung file đã có trên host)
  4. Truy cập http://domain/S2U_Firewall/ và đăng nhập bằng mật khẩu mặc định: s2u
  5. Chạy "tối ưu" ở mục cấu hình -> chạy "kiểm tra" ở mục kiểm tra (nếu "Hỗ trợ AUTO_PREPEND_FILE" báo không tương thích thì bạn làm bước 7 ) để có cấu hình tốt nhất.
  6. Kiểm tra hoạt động của firewall bằng cách nhấn F5 liên tục ở website bạn, ip và logs sẽ được ghi trong trang quản lý ("Lấy thông tin" ở mục tình trạng). Nếu đã chắc chắn, bạn có thể thử thêm công cụ S.2.U Ddos Flash Client trong mục công cụ.
- 7. Nếu không thấy ip hay logs thì mở file index hoặc file global của website và include file s2u_firewall_system.php vào. 
+ 7. Nếu không thấy ip hay logs thì mở file index hoặc file global của website và include file s2u_firewall_system.php vào.
 
 ===================
 
-Liên hệ hoặc hỗ trợ: 
+Liên hệ hoặc hỗ trợ:
 https://github.com/s2u.vn/S2U-Firewall-System/wiki
 Email: won.baria@gmail.com
