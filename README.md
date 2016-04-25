@@ -49,11 +49,6 @@ Các tính năng:
 
  ===================
 
- Hướng dẫn nâng cấp:
- Xóa hết thư mục cũ và up thư mục mới lên.
-
- ===================
-
  Hướng dẫn cài đặt:
  1. Download file nén .zip ở dưới bài viết.
  2. Xóa firewall cũ (nếu có). cần chmod thư mục 701 và file 604 để có thể xóa hoàn toàn.
@@ -62,6 +57,13 @@ Các tính năng:
  5. Chạy "tối ưu" ở mục cấu hình -> chạy "kiểm tra" ở mục kiểm tra (nếu "Hỗ trợ AUTO_PREPEND_FILE" báo không tương thích thì bạn làm bước 7 ) để có cấu hình tốt nhất.
  6. Kiểm tra hoạt động của firewall bằng cách nhấn F5 liên tục ở website bạn, ip và logs sẽ được ghi trong trang quản lý ("Lấy thông tin" ở mục tình trạng). Nếu đã chắc chắn, bạn có thể thử thêm công cụ S.2.U Ddos Flash Client trong mục công cụ.
  7. Nếu không thấy ip hay logs thì mở file index hoặc file global của website và include file s2u_firewall_system.php vào.
+ 
+ 
+ ===================
+
+ Hướng dẫn nâng cấp:
+ Xóa hết thư mục cũ và up thư mục mới lên.
+
 
 ===================
 
